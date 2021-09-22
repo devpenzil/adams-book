@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import LoginPage from "./pages/LoginPage"
 import ProfilePage from "./pages/ProfilePage"
 import SignupPage from "./pages/SignupPage"
+import './App.css'
 function App() {
   return (
     <div className="App">
