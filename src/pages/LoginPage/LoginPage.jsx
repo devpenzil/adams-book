@@ -1,6 +1,6 @@
 import React from 'react'
-import HomeImg from '../components/HomeImg'
-import LoginForm from '../components/LoginForm'
+import HomeImg from './components/HomeImg'
+import LoginForm from './components/LoginForm'
 function LoginPage() {
     return (
         <div>

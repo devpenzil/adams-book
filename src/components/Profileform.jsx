@@ -23,7 +23,7 @@ function Profileform() {
                     </div>
                 </div>
 
-                <hr className="w-full h-1 bg-green-appgreendark my-12" />
+                <hr className="w-full h-1 bg-green-appgreen my-12" />
 
                 <div>
                     <div className="mt-6">
@@ -43,7 +43,7 @@ function Profileform() {
                     </div>
                 </div>
 
-                <hr className="w-full h-1 bg-green-appgreendark my-12" />
+                <hr className="w-full h-1 bg-green-appgreen my-12" />
 
                 <div className="mt-6 mb-6">
                         <button className="p-2 w-full bg-base-red  font-semibold  border-2 border-base-red text-base-white rounded-xl outline-none">Delete my account</button>

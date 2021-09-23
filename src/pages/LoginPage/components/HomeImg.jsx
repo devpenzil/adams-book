@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../assets/home-img.png'
+import img from '../../../assets/home-img.png'
 function HomeImg() {
     return (
         <div>
@@ -11,6 +11,6 @@ function HomeImg() {
             </div>
         </div>
     )
-}
+}   
 
 export default HomeImg
