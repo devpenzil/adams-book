@@ -8,7 +8,7 @@ import Heading from '../../../components/Heading'
 import Pageswitch from '../../../components/Pageswitch'
 function LoginForm() {
     return (
-        <div>
+        <>
             <div className="w-full bg-green-appgreen h-screen flex justify-center items-center">
                 <div>
                     <Heading label={"Open Your Book"} />
@@ -27,7 +27,7 @@ function LoginForm() {
                     <Pageswitch label={"don't have an account ?"} question={"create one"}/>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import Createnote from '../components/Createnote'
-import Notelist from '../components/Notelist'
-import Topbar from '../components/Topbar'
+import Createnote from './components/Createnote'
+import Notelist from './components/Notelist'
+import Topbar from '../../components/Topbar'
 function Dashboard() {
     return (
-        <div>
+        <>
             <Topbar />
             <div className="container mx-auto flex mt-6">
                 <div className="w-2/3 h-screen overflow-x-auto">
@@ -15,7 +15,7 @@ function Dashboard() {
                     <Createnote />
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

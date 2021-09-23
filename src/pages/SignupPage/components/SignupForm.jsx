@@ -8,7 +8,7 @@ import SocialButtons from '../../../components/SocialButtons'
 import Pageswitch from '../../../components/Pageswitch'
 function SignupForm() {
     return (
-        <div>
+        <>
             <div className="w-full bg-green-appgreen h-screen flex justify-center items-center">
                 <div>
                    <Heading label={"Create your Book"}/>
@@ -31,7 +31,7 @@ function SignupForm() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

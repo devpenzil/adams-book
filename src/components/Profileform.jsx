@@ -2,7 +2,7 @@ import React from 'react'
 
 function Profileform() {
     return (
-        <div>
+        <>
             <div className="w-96 mx-auto mt-20">
                 <img src="https://avatars.githubusercontent.com/u/67946056?v=4" alt=""  className="w-56 mx-auto rounded-full"/>
                 <div>
@@ -49,7 +49,7 @@ function Profileform() {
                         <button className="p-2 w-full bg-base-red  font-semibold  border-2 border-base-red text-base-white rounded-xl outline-none">Delete my account</button>
                     </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,13 +1,8 @@
 import React from 'react'
-
 function Notelist() {
     return (
-        <div className="p-4">
-            <div className="text-6xl font-semibold space-y-3">
-                <div>Hi Ajo Alex</div>
-                <div>Welcome back</div>
-            </div>
-
+     <>
+            <div className="p-4">
             <div>
                 <div className="border-2 border-green-appgreendark p-2 my-4 ">
                     <div className="title">
@@ -52,6 +47,7 @@ function Notelist() {
                 </div>
             </div>
         </div>
+     </>
     )
 }
 

@@ -3,7 +3,7 @@ import HomeImg from './components/HomeImg'
 import LoginForm from './components/LoginForm'
 function LoginPage() {
     return (
-        <div>
+        <>
             <div className="flex">
                 <div className="w-1/2">
                     <HomeImg />
@@ -12,7 +12,7 @@ function LoginPage() {
                     <LoginForm />
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
