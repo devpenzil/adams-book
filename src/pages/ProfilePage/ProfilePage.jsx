@@ -8,7 +8,7 @@ import Password from './components/Password'
 import DangerButtonLarge from '../../components/DangerButtonLarge'
 function ProfilePage() {
     return (
-        <div>
+        <>
             <Topbar />
             <div className="text-right p-4">
                 <DangerButtonSmall label={"logout"}/>
@@ -24,7 +24,7 @@ function ProfilePage() {
             </div>
             </div>
             
-        </div>
+        </>
     )
 }
 
