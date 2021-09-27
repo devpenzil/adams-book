@@ -1,6 +1,7 @@
 import React from 'react'
 
 function PrimaryInput(props) {
+    
     return (
         <>
             <div className="mt-6">

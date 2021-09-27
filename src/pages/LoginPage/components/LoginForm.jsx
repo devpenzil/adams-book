@@ -7,13 +7,14 @@ import SocialButtons from '../../../components/SocialButtons'
 import Heading from '../../../components/Heading'
 import Pageswitch from '../../../components/Pageswitch'
 function LoginForm() {
+
     return (
         <>
             <div className="w-full bg-green-appgreen h-screen flex justify-center items-center">
                 <div>
                     <Heading label={"Open Your Book"} />
                     <div>
-                        <PrimaryInput label={"UserName"} type={"text"}/>
+                        <PrimaryInput label={"UserName"} type={"text"} />
                         <PrimaryInput label={"Password"} type={"password"}/>
                         <PrimaryButton label={"Login"}/>
                     </div>
