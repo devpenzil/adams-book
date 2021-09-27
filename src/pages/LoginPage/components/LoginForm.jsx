@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import google from '../../../assets/google.png'
 import facebook from '../../../assets/facebook.png'
 import PrimaryInput from '../../../components/PrimaryInput'
@@ -7,15 +8,18 @@ import SocialButtons from '../../../components/SocialButtons'
 import Heading from '../../../components/Heading'
 import Pageswitch from '../../../components/Pageswitch'
 function LoginForm() {
-
+    const history = useHistory()
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    console.log(username, password)
     return (
         <>
             <div className="w-full bg-green-appgreen h-screen flex justify-center items-center">
                 <div>
                     <Heading label={"Open Your Book"} />
                     <div>
-                        <PrimaryInput label={"UserName"} type={"text"} />
-                        <PrimaryInput label={"Password"} type={"password"}/>
+                        <PrimaryInput label={"UserName"} triggerchange={(e)=> setUsername(e.target.value)} type={"text"} />
+                        <PrimaryInput label={"Password"} triggerchange={(e)=> setPassword(e.target.value)} type={"password"}/>
                         <PrimaryButton label={"Login"}/>
                     </div>
                     <div className="mt-8">
@@ -25,7 +29,7 @@ function LoginForm() {
                             <SocialButtons path={facebook} />
                         </div>
                     </div>
-                    <Pageswitch label={"don't have an account ?"} question={"create one"}/>
+                    <Pageswitch label={"don't have an account ?"} triggerclick={()=>history.push("/signup")} question={"create one"}/>
                 </div>
             </div>
         </>

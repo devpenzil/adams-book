@@ -4,7 +4,7 @@ function Pageswitch(props) {
     return (
         <>
             <div className="text-center mt-8">
-                {props.label} <a href="#" className="underline">{props.question}</a>
+                {props.label} <span className="underline cursor-pointer" onClick={props.triggerclick}>{props.question}</span>
             </div>
         </>
     )
