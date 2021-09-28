@@ -1,5 +1,5 @@
 export const AUTH_BASE_URL = "https://identitytoolkit.googleapis.com/v1/"
 export const STORE_BASE_URL = "https://adam-s-book-9b5b9-default-rtdb.firebaseio.com"
 export const API_KEY = "AIzaSyBrFy5oYlmhZZ3mWVl6dYQiV-Z3acgHt38"
-export const sign_in = "accounts:signInWithPassword?key"
-export const sign_up = "accounts:signUp?key"
+export const sign_in = "accounts:signInWithPassword?key="
+export const sign_up = "accounts:signUp?key="    
