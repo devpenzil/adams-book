@@ -1,5 +1,5 @@
-export const AUTH_BASE_URL = "https://identitytoolkit.googleapis.com/v1/"
-export const STORE_BASE_URL = "https://adam-s-book-9b5b9-default-rtdb.firebaseio.com"
-export const API_KEY = "AIzaSyBrFy5oYlmhZZ3mWVl6dYQiV-Z3acgHt38"
-export const sign_in = "accounts:signInWithPassword?key="
-export const sign_up = "accounts:signUp?key="    
+export const AUTH_BASE_URL = process.env.REACT_APP_AUTH_BASE_URL
+export const STORE_BASE_URL = process.env.REACT_APP_STORE_BASE_URL
+export const API_KEY = process.env.REACT_APP_API_KEY
+export const sign_in = process.env.REACT_APP_SIGN_IN
+export const sign_up = process.env.REACT_APP_SIGN_UP
