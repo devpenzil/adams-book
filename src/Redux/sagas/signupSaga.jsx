@@ -1,4 +1,4 @@
-import {takeEvery, put} from 'redux-saga/effects'
+import {takeEvery} from 'redux-saga/effects'
 import { signingup } from '../slices/signupSlice'
 import {sign_up, API_KEY} from '../../constants/constants'
 import axios from '../../axios/authinstance'
@@ -16,7 +16,9 @@ export function* signedup(dispatch){
         "returnSecureToken": true
     }).then((Response)=>{
         console.log(Response.data)
+        alert("Account successfull created")
     }).catch((Error)=>{
         console.log(Error)
     })
+    
 }

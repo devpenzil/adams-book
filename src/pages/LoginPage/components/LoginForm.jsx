@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { loggingin } from '../../../Redux/slices/loginSlice'
 import google from '../../../assets/google.png'
 import facebook from '../../../assets/facebook.png'
 import PrimaryInput from '../../../components/PrimaryInput'
@@ -8,19 +10,25 @@ import SocialButtons from '../../../components/SocialButtons'
 import Heading from '../../../components/Heading'
 import Pageswitch from '../../../components/Pageswitch'
 function LoginForm() {
+    const dispatch = useDispatch()
     const history = useHistory()
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    console.log(username, password)
+    const triggerlogin = (email, password) => {
+        dispatch(loggingin({'email':email,'password':password}))
+    }
+    if(localStorage.getItem("displayName") == ""){
+        history.push("/dashboard")
+    }
     return (
         <>
             <div className="w-full bg-green-appgreen h-screen flex justify-center items-center">
                 <div>
                     <Heading label={"Open Your Book"} />
                     <div>
-                        <PrimaryInput label={"UserName"} triggerchange={(e)=> setUsername(e.target.value)} type={"text"} />
+                        <PrimaryInput label={"Email"} triggerchange={(e)=> setEmail(e.target.value)} type={"email"} />
                         <PrimaryInput label={"Password"} triggerchange={(e)=> setPassword(e.target.value)} type={"password"}/>
-                        <PrimaryButton label={"Login"}/>
+                        <PrimaryButton triggerclick={()=>triggerlogin(email,password)} label={"Login"}/>
                     </div>
                     <div className="mt-8">
                         <div className="text-center text-xl">or sign in with</div>
