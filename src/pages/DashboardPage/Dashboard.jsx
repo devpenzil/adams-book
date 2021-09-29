@@ -5,7 +5,7 @@ import Topbar from '../../components/Topbar'
 function Dashboard() {
     return (
         <>
-            <Topbar />
+            <Topbar user={localStorage.getItem("displayName")}/>
             <div className="container mx-auto flex mt-6">
                 <div className="w-2/3 h-screen overflow-x-auto">
                     <Notelist />

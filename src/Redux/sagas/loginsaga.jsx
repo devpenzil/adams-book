@@ -17,7 +17,7 @@ export function* loggedin(dispatch){
         localStorage.setItem("displayName",Response.data.displayName)
         localStorage.setItem("idToken",Response.data.idToken)
         localStorage.setItem("localId",Response.data.localId)
-        alert("You are logged in")
+        // alert("You are logged in")
     }).catch((Error)=>{
         alert(Error)
     })    
