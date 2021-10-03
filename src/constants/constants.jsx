@@ -1,3 +1,5 @@
+// * Imported from env
+
 export const AUTH_BASE_URL = process.env.REACT_APP_AUTH_BASE_URL
 export const STORE_BASE_URL = process.env.REACT_APP_STORE_BASE_URL
 export const API_KEY = process.env.REACT_APP_API_KEY

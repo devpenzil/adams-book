@@ -6,7 +6,7 @@ import axios from '../../axios/authinstance'
 export function* signupworking(){
     yield takeEvery(signingup, signedup)
 }
-
+// todo Add an API call for Create a new collection for the user
 export function* signedup(dispatch){
     const credential = dispatch.payload
     yield axios.post(`${sign_up}${API_KEY}`,{
