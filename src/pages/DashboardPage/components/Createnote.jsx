@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {useDispatch} from 'react-redux'
 import image from "../../../assets/image.png";
 import docu from "../../../assets/document.png";
 import video from "../../../assets/video.png";
@@ -7,14 +8,39 @@ import PrimaryInput from "../../../components/PrimaryInput";
 import PrimaryButton from "../../../components/PrimaryButton";
 import PrimaryTextArea from "../../../components/PrimaryTextArea";
 import ThumbImg from "../../../components/ThumbImg";
+import { addingNotes } from "../../../Redux/slices/addNoteSlice";
 function Createnote() {
+  const dispatch = useDispatch()
+  const [title, setTitle] = useState()
+  const [content, setContent] = useState()
+  const [nowdate, setNowdate] = useState()
+
+
+  useEffect(() => {
+    let date = new Date()
+    let day = date.getDate();
+    let month = date.getMonth()+1;
+    let year = date.getFullYear();
+    let fullDate = `${day}.${month}.${year}.`;
+    setNowdate(fullDate)
+    console.log(nowdate)
+  }, [])
+
+  const payload = {
+    "title": title,
+    "content": content, 
+    "date": nowdate
+  }
+  const addnote = (payload) => {
+    dispatch(addingNotes(payload))
+  }
   return (
     <>
       <div className="p-4">
         <div className="text-3xl font-semibold">Create new page</div>
         <div>
-          <PrimaryInput type={"text"} label={"Note title"} bg={"white"} />
-          <PrimaryTextArea label={"Note Content"} />
+          <PrimaryInput triggerchange={(e)=>setTitle(e.target.value)} type={"text"} label={"Note title"} bg={"white"} />
+          <PrimaryTextArea triggerchange={(e)=>setContent(e.target.value)} label={"Note Content"} />
 
           <div className="mt-6">
             <div className="font-semibold">Attachments</div>
@@ -26,7 +52,7 @@ function Createnote() {
             </div>
           </div>
 
-          <PrimaryButton label={"Create note"} />
+          <PrimaryButton triggerclick={()=>addnote(payload)} label={"Create note"} />
         </div>
       </div>
     </>

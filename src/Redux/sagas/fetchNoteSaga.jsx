@@ -16,15 +16,4 @@ export function* fetchwork() {
   } catch(error) {
     yield put(fetchError(error.message))
   }
-
-  // yield axios
-  //   .get(`users/${localStorage.getItem("localId")}/notes.json`)
-  //   .then((Response) => {
-  //     // dispatch = Response.data;
-  //     put ("fetchSuccess", fetchSuccess)
-  //     console.log(Response.data);
-  //   })
-  //   .catch((Error) => {
-  //     alert(Error);
-  //   });
 }
