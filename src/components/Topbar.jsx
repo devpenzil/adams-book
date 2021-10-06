@@ -8,7 +8,7 @@ function Topbar(props) {
                     <div className="text-2xl font-semibold">Adam's Book</div>
                 </div>
                 <div>
-                    <div className="text-xl font-semibold cursor-pointer">{props.user}</div>
+                    <div onClick={props.triggerclick} className="text-xl font-semibold cursor-pointer">{props.user}</div>
                 </div>
             </div>
         </>
