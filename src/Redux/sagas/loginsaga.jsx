@@ -13,11 +13,10 @@ export function* loggedin(dispatch){
         "password" : credential.password,
         "returnSecureToken": true
     }).then((Response)=>{
-        console.log(Response.data)
         localStorage.setItem("displayName",Response.data.displayName)
         localStorage.setItem("idToken",Response.data.idToken)
         localStorage.setItem("localId",Response.data.localId)
-        // alert("You are logged in")
+        localStorage.setItem("email",Response.data.email)
     }).catch((Error)=>{
         alert(Error)
     })    
