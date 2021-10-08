@@ -1,6 +1,5 @@
 import {put, call, takeEvery} from 'redux-saga/effects'
 import { fetchingnotes , fetchSuccess, fetchError } from "../slices/fetchNoteSlice";
-import {addingNotes} from '../slices/addNoteSlice'
 import axios from "../../axios/storeinstance";
 
 
