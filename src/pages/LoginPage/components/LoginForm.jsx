@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loggingin } from "../../../Redux/slices/loginSlice";
@@ -9,6 +10,7 @@ import PrimaryButton from "../../../components/PrimaryButton";
 import SocialButtons from "../../../components/SocialButtons";
 import Heading from "../../../components/Heading";
 import Pageswitch from "../../../components/Pageswitch";
+
 function LoginForm() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -17,23 +19,34 @@ function LoginForm() {
   const [message, setMessage] = useState("login");
 
   const triggerlogin = (email, password) => {
+    if (email === "") {
+      toast("Email is Mandatory");
+      return 0;
+    }
+    if (password === "") {
+      toast("Password is Mandatory");
+      return 0;
+    }
     dispatch(loggingin({ email: email, password: password }));
+    setMessage("loading");
+
     // * check login status after 3 seconds
     setTimeout(() => {
       jumbtodashboard();
     }, 3000);
-  }
-  
-    //* Redirect  to dashboard when user logged in
+  };
+
+  //* Redirect  to dashboard when user logged in
   const jumbtodashboard = () => {
     if (localStorage.getItem("displayName") != null) {
       history.push("/dashboard");
     }
-  }
+    setMessage("login");
+  };
 
   useEffect(() => {
     jumbtodashboard();
-  }, [])
+  }, []);
 
   return (
     <>
@@ -56,6 +69,7 @@ function LoginForm() {
               label={message}
             />
           </div>
+
           <div className="mt-8">
             <div className="text-center text-xl">or sign in with</div>
             <div className="flex justify-center">
@@ -70,6 +84,16 @@ function LoginForm() {
           />
         </div>
       </div>
+      <Toaster
+        toastOptions={{
+          className: "",
+          style: {
+            border: "1px solid #0B8E8A",
+            padding: "10px",
+            color: "#0B8E8A",
+          },
+        }}
+      />
     </>
   );
 }

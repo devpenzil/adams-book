@@ -8,7 +8,7 @@ export function* addNotes(){
 
 export function* added(dispatch){
     const credential = dispatch.payload
-    axiosstore.post(`users/${localStorage.getItem("localId")}/notes.json` ,{
+    yield axiosstore.post(`users/${localStorage.getItem("localId")}/notes.json` ,{
         "title": credential.title,
         "content": credential.content,
         "date": credential.date
