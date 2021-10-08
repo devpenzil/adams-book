@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 export const logIn = createSlice({
-    name : "signup",
+    name : "login",
     initialState:{
         value: {}
     },
@@ -9,9 +9,14 @@ export const logIn = createSlice({
         loggingin: (state,action) => {
             state.value = action.payload
             // console.log(action.payload) 
+        },
+        loggingerror: (state,action) => {
+            state.value = action.payload
+            // console.error(state.value)
+            return state
         }
     }
 })
 
-export const {loggingin} = logIn.actions
+export const {loggingin, loggingerror} = logIn.actions
 export default logIn.reducer

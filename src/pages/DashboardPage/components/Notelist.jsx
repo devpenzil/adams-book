@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchingnotes } from "../../../Redux/slices/fetchNoteSlice";
+import Loader from "../../../components/Loader";
 function Notelist() {
   const notes = useSelector((state) => state.fetch.value);
   const dispatch = useDispatch();
@@ -8,9 +9,12 @@ function Notelist() {
     dispatch(fetchingnotes());
   }, []);
   const note = Object.values(notes ? notes : "")
+
+  
   return (
     <>
       <div className="p-4">
+  
         <div>
             {note ?
                 note.map((obj, index)=>{
@@ -33,6 +37,11 @@ function Notelist() {
                     )
                 })
             : "Loading..."}
+            {
+              note.length===0 ?
+              <Loader /> : 
+              ""
+            }
           
         </div>
       </div>

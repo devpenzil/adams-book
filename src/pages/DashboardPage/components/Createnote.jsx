@@ -23,7 +23,6 @@ function Createnote() {
     let year = date.getFullYear();
     let fullDate = `${day}.${month}.${year}.`;
     setNowdate(fullDate)
-    console.log(nowdate)
   }, [])
 
   const payload = {
@@ -32,7 +31,12 @@ function Createnote() {
     "date": nowdate
   }
   const addnote = (payload) => {
-    dispatch(addingNotes(payload))
+     
+      if (payload.title === undefined || payload.content === undefined) {
+        alert("Add title and content")
+      }else{
+        dispatch(addingNotes(payload))
+      }
   }
   return (
     <>

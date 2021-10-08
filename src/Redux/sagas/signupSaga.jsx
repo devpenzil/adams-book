@@ -27,7 +27,7 @@ export function* signedup(dispatch){
         }).catch((Error)=>{
             console.log(Error.message)
         })
-    }).catch((Error)=>{
-        alert(Error.message)
+    }).catch((error)=>{
+        alert(error.response.data.error.message)
     })
 }
