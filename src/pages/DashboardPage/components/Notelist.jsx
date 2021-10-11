@@ -13,7 +13,7 @@ function Notelist() {
   
   return (
     <>
-      <div className="p-4">
+      <div className="p-4 notelist">
   
         <div>
             {note ?

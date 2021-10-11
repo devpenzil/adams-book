@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom'
 import Createnote from './components/Createnote'
 import Notelist from './components/Notelist'
 import Topbar from '../../components/Topbar'
+import Footer from './components/Footer'
 function Dashboard() {
     const history = useHistory()
     return (
@@ -13,12 +14,13 @@ function Dashboard() {
                     <Notelist />
                     
                 </div>
-                <div className="w-1/3 h-screen overflow-x-auto">
+                <div className="w-1/3 ">
                     <Createnote />
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
 
-export default Dashboard
+export default React.memo(Dashboard)
