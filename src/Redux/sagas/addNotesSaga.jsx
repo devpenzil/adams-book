@@ -1,20 +1,24 @@
-import { takeEvery } from "redux-saga/effects"
+import { takeEvery, call, put } from "redux-saga/effects"
 import { addingNotes } from "../slices/addNoteSlice"
 import axiosstore from '../../axios/storeinstance'
-
+import {fetchingnotes} from '../slices/fetchNoteSlice'
 export function* addNotes(){
     yield takeEvery(addingNotes , added)
 }
 
 export function* added(dispatch){
     const credential = dispatch.payload
-    yield axiosstore.post(`users/${localStorage.getItem("localId")}/notes.json` ,{
-        "title": credential.title,
-        "content": credential.content,
-        "date": credential.date
-    }).then((Response)=>{
+    try {
+        const note = yield call(axiosstore.post,`users/${localStorage.getItem("localId")}/notes.json`,{
+                    "title": credential.title,
+                    "content": credential.content,
+                    "date": credential.date
+                })
         alert("Note added successfully")
-    }).catch((Error)=>{
-        console.log(Error)
-    })
+        yield put(fetchingnotes())
+        return note
+      } catch(error) {
+        alert("some error")
+      }
 }
+

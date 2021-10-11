@@ -38,7 +38,7 @@ function Createnote() {
   };
   return (
     <>
-      <div className="p-4">
+      <div className="p-4 create-note">
         <div className="text-3xl font-semibold">Create new page</div>
         <div>
           <PrimaryInput
