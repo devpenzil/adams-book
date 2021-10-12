@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 import image from "../../../assets/image.png";
 import docu from "../../../assets/document.png";
 import video from "../../../assets/video.png";
@@ -14,6 +15,7 @@ function Createnote() {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
   const [nowdate, setNowdate] = useState();
+  const [button, setButton] = useState("Create Note")
 
   useEffect(() => {
     let date = new Date();
@@ -30,11 +32,15 @@ function Createnote() {
     date: nowdate,
   };
   const addnote = (payload) => {
+    setButton("Loading")
     if (payload.title === undefined || payload.content === undefined) {
-      alert("Add title and content");
+      toast("Add title and content");
     } else {
       dispatch(addingNotes(payload));
     }
+    setTimeout(() => {
+      setButton("Create Note")
+    }, 3000);
   };
   return (
     <>
@@ -64,10 +70,20 @@ function Createnote() {
 
           <PrimaryButton
             triggerclick={() => addnote(payload)}
-            label={"Create note"}
+            label={button}
           />
         </div>
       </div>
+      <Toaster
+        toastOptions={{
+          className: "",
+          style: {
+            border: "1px solid #0B8E8A",
+            padding: "10px",
+            color: "#0B8E8A",
+          },
+        }}
+      />
     </>
   );
 }
