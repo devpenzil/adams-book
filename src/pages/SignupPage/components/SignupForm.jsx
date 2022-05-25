@@ -7,21 +7,27 @@ import PrimaryInput from "../../../components/PrimaryInput";
 import PrimaryButton from "../../../components/PrimaryButton";
 import SocialButtons from "../../../components/SocialButtons";
 import Pageswitch from "../../../components/Pageswitch";
-// import { auth } from "../../../firebase/config";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../firebase/config";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { toast } from "react-toastify";
 function SignupForm() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
   const triggersignup = (username, email, password) => {
-    // createUserWithEmailAndPassword(auth, email, password)
-    //   .then((user) => {
-    //     console.log(user);
-    //   })
-    //   .catch((Error) => {
-    //     console.log(Error);
-    //   });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((user) => {
+        updateProfile(auth.currentUser, {
+          displayName: username,
+        });
+        toast.success("Account created successfully");
+        console.log(auth.currentUser);
+        history.push("/");
+      })
+      .catch((Error) => {
+        toast.error(Error.message);
+      });
   };
   return (
     <>

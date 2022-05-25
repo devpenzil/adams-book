@@ -7,7 +7,6 @@ import PrimaryButton from "../../../components/PrimaryButton";
 import SocialButtons from "../../../components/SocialButtons";
 import Heading from "../../../components/Heading";
 import Pageswitch from "../../../components/Pageswitch";
-import "react-toastify/dist/ReactToastify.css";
 function LoginForm() {
   const history = useHistory();
   const [email, setEmail] = useState("");

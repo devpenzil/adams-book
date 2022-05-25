@@ -1,9 +1,11 @@
-import {BrowserRouter as Router , Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./pages/DashboardPage/Dashboard";
-import LoginPage from "./pages/LoginPage/LoginPage"
-import ProfilePage from "./pages/ProfilePage/ProfilePage"
-import SignupPage from "./pages/SignupPage/SignupPage"
-import './App.css'
+import LoginPage from "./pages/LoginPage/LoginPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import SignupPage from "./pages/SignupPage/SignupPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 function App() {
   return (
     <div className="App">
@@ -15,16 +17,13 @@ function App() {
           <SignupPage />
         </Route>
         <Route path="/dashboard">
-         <Dashboard />
+          <Dashboard />
         </Route>
         <Route path="/profile">
-         <ProfilePage />
+          <ProfilePage />
         </Route>
       </Router>
-      
-      
-      
-      
+      <ToastContainer />
     </div>
   );
 }
